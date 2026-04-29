@@ -1,8 +1,9 @@
 const options = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 let balance = 100;
+let stake = 1;
 
 function spin(array) {
-    if (balance < 10) {
+    if (balance < 10*stake) {
         if (balanceElement){
         balanceElement.textContent = "Not enough balance to play!";};
         return;
@@ -11,17 +12,17 @@ function spin(array) {
     for(let i = 0; i < array.length; i++) {
         result.push(array[Math.floor(Math.random() * array.length)]);
     }
-    balance -= 10;
+    balance -= 10*stake;
     return result;
 }
 
 function checkWin(result) {
     if(result[0] === result[1] && result[1] === result[2]) {
-        balance += 20;
+        balance += 20*stake;
         return "win";
     }
     if(result[0] === result[1] || result[1] === result[2] || result[0] === result[2]) {
-        balance += 10;
+        balance += 10*stake;
         return "neutral";
     }
     return "lose";
@@ -35,14 +36,30 @@ function display(array) {
         }
     }
 }
-
-function play() {
-    const result = spin(options);
+function stakeup() {
+    if (stake < 10) {
+        stake++;
+    }
+    const stakeElement = document.getElementById('stake');
+    if (stakeElement) {
+        stakeElement.textContent = stake;
+    }
+}
+function stakedown() {
+    if (stake > 1) {
+        stake--;
+    }
+    const stakeElement = document.getElementById('stake');
+    if (stakeElement) {
+        stakeElement.textContent = stake;
+    }
+}
+function play() {    const result = spin(options);
     const winStatus = checkWin(result);
     const statusElement = document.getElementById('status');
     const balanceElement = document.getElementById('balance');
     if (statusElement) {
-        statusElement.textContent = winStatus+"-";
+        statusElement.textContent = winStatus;
     }
     if (balanceElement) {
         balanceElement.textContent = balance;
