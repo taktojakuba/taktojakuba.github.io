@@ -179,7 +179,7 @@ a:hover { background: var(--navy); color: var(--white); }
   margin: 4px 8px;
 }
 .card-img {
-  min-height: 120px;
+  min-height: auto;
   background: var(--white);
   border-top: 2px solid var(--mid);
   overflow: hidden;
