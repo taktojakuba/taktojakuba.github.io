@@ -8,7 +8,7 @@ async function dc() {
     if (data.success) {
       const user = data.data.discord_user;
       const status = data.data.discord_status;
-      document.getElementById("discord-status").innerHTML =
+      document.getElementById("status").innerHTML =
         `<p>${user.display_name} is ${status}</p>`;
     } else {
       console.log("error");
