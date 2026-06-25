@@ -14,7 +14,12 @@
   --bevel-in:  var(--mid) var(--white) var(--white) var(--mid);
 }
 
-* { box-sizing: border-box; margin: 0; padding: 0; }
+* { 
+    zoom: 110%;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
 body, html {
   min-height: 100%;
