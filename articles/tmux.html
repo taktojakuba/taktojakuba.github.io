@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>jsbkgg.space</title>
+        <link rel="stylesheet" href="../index.css" />
+        <link rel="icon" type="image/x-icon" href="../assets/icon.svg" />
+        <style>
+            *{
+                zoom: 110%;
+            }
+        </style>
+    </head>
+    <body>
+        <main class="window">
+            <div class="titlebar">
+                <div class="titlebar-left">
+                    <a href="../index.html"><p class="titlebar-title">jsbkgg.space</p></a>
+                </div>
+                <div class="titlebar-buttons">
+                    <div class="btn" title="Minimize">_</div>
+                    <div class="btn" title="Maximize">□</div>
+                    <div class="btn" title="Close">✕</div>
+                </div>
+            </div>
+
+            <div class="body">
+                <div id="boot-log" aria-live="polite"></div>
+
+                <div class="group" data-label="About">
+                    <h1>Minimalistic Configuration Guide for tmux</h1>
+                </div>
+
+                <div class="group" data-label="Intro">
+                    <h3>What is tmux?</h3>
+                    <p>tmux is a terminal multiplexer.</p>
+
+                    <h3>Why use it?</h3>
+                    <p>tmux lets you have multiple windows and panes inside a single terminal session. Think of it like a web browser — one window, multiple tabs.</p>
+
+                    <h3>How do I install it?</h3>
+                    <p>On most distros, just use your package manager to install the package named <code>tmux</code>.</p>
+                </div>
+
+                <div class="group" data-label="Configuration">
+                    <div class="group" data-label="Create Config">
+                        <h3>Create the tmux config directory:</h3>
+                        <code>mkdir ~/.config/tmux</code>
+
+                        <h3>Create the config files:</h3>
+                        <code>touch ~/.config/tmux/keymaps.conf && touch ~/.config/tmux/options.conf && touch ~/.config/tmux/tmux.conf</code>
+
+                        <p>Only <code>tmux.conf</code> is required, but splitting the config into separate files makes it easier to read and modify.</p>
+                    </div>
+
+                    <div class="group" data-label="Actual Configuration">
+                        <p>Now that the directory and files are created, we can start configuring tmux.</p>
+
+                        <h3>tmux.conf</h3>
+                        <p>This file just sources the other two:</p>
+                        <code><pre>
+# source files
+source-file ~/.config/tmux/keymaps.conf
+source-file ~/.config/tmux/options.conf
+                        </pre></code>
+
+                        <h3>options.conf</h3>
+                        <p>This file holds the general settings for tmux:</p>
+                        <code><pre>
+# change indexing to be more human-readable
+set -g base-index 1
+set -g pane-base-index 1
+set -g renumber-windows on
+# color config
+set -g default-terminal "tmux-256color"
+set -ga terminal-overrides ",*:RGB"
+# clipboard
+set -g set-clipboard on
+# enable status bar
+set -g status "on"
+# status bar config
+set -g status-justify "left"
+set-option -g status-position top
+                        </pre></code>
+
+                        <h3>keymaps.conf</h3>
+                        <p>This file holds all the keybindings (shortcuts) for tmux:</p>
+                        <code><pre>
+# unbind default keymaps
+unbind -n Left
+unbind -n Right
+unbind -n Up
+unbind -n Down
+unbind C-b
+unbind %
+unbind '"'
+unbind r
+# set prefix to Alt+b
+set -g prefix M-b
+bind-key M-b send-prefix
+# open/close windows
+bind -n M-t new-window -c "#{pane_current_path}"
+bind -n M-w kill-pane
+bind -n M-q kill-window
+# open panes
+bind -n M-r split-window -h -c "#{pane_current_path}"
+bind -n M-f split-window -v -c "#{pane_current_path}"
+# reload config
+bind -n M-R source-file $HOME/.config/tmux/tmux.conf
+# pane movement
+bind -n M-Left  select-pane -L
+bind -n M-Down  select-pane -D
+bind -n M-Up    select-pane -U
+bind -n M-Right select-pane -R
+# Alt+number window selection
+bind -n M-1 select-window -t 1
+bind -n M-2 select-window -t 2
+bind -n M-3 select-window -t 3
+bind -n M-4 select-window -t 4
+bind -n M-5 select-window -t 5
+bind -n M-6 select-window -t 6
+bind -n M-7 select-window -t 7
+bind -n M-8 select-window -t 8
+bind -n M-9 select-window -t 9
+                        </pre></code>
+                    </div>
+                </div>
+
+                <div class="group" data-label="Configuration Overview">
+                    <p>Now that tmux is configured, here's a summary of what each file does.</p>
+
+                    <h3>options.conf</h3>
+                    <p>The status bar is enabled — it shows your current window and other open windows, with the hostname, time, and date on the right side.</p>
+                    <p>Window indexing starts at 1 instead of 0, which makes navigation more comfortable.</p>
+                    <p>Clipboard integration is enabled, and color profiles are configured for proper terminal color support.</p>
+
+                    <h3>keymaps.conf</h3>
+                    <p>All default tmux keybindings are unbound, and the prefix key is changed from <kbd>Ctrl+b</kbd> to <kbd>Alt+b</kbd>.</p>
+                    <p>To open a new window, press <kbd>Alt+t</kbd>. To close a window, press <kbd>Alt+q</kbd>.</p>
+                    <p>To open a pane in the current window, press <kbd>Alt+r</kbd> for a vertical split or <kbd>Alt+f</kbd> for a horizontal split.</p>
+                    <p>To reload the config, press <kbd>Alt+R</kbd> (i.e. <kbd>Alt+Shift+r</kbd>).</p>
+                    <p>To move between panes, hold <kbd>Alt</kbd> and use the arrow keys.</p>
+                    <p>To switch windows, press <kbd>Alt</kbd> and a number key.</p>
+                </div>
+            </div>
+        </main>
+        <script src="script.js"></script>
+    </body>
+</html>
