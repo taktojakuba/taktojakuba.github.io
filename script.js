@@ -1,4 +1,5 @@
 async function dc() {
+  const status = document.getElementById("status");
   try {
     const response = await fetch(
       "https://api.lanyard.rest/v1/users/768727776323829790",
@@ -7,15 +8,15 @@ async function dc() {
 
     if (data.success) {
       const user = data.data.discord_user;
-      const status = data.data.discord_status;
-      document.getElementById("status").innerHTML =
-        `<p>${user.display_name} is ${status}</p>`;
+      const st = data.data.discord_status;
+      status.innerHTML = `<p>${user.display_name} is ${st}</p>`;
     } else {
-      console.log("error");
+      status.innerHTML = "<p>offline</p>";
     }
   } catch (err) {
     console.error(err);
-    console.log("error");
+    status.innerHTML = "<p>offline</p>";
   }
 }
+
 dc();

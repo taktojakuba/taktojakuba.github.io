@@ -9,11 +9,167 @@
     <link rel="icon" type="image/x-icon" href="assets/icon.svg" />
   </head>
   <body>
+    <div id="banner-left" class="banner" aria-hidden="true">
+      <pre>
+            ____ 
+           / __ \
+          / /_/ /
+         / _, _/ 
+        /_/ |_|  
+        
+            ______
+           / ____/
+          / __/   
+         / /___   
+        /_____/   
+        
+            ______
+           / ____/
+          / /_    
+         / __/    
+        /_/       
+        
+            __ 
+           / / 
+          / /  
+         / /___
+        /_____/
+        
+            ______
+           / ____/
+          / __/   
+         / /___   
+        /_____/   
+        
+           ______
+          / ____/
+         / /     
+        / /___   
+        \____/   
+        
+          ______
+         /_  __/
+          / /   
+         / /    
+        /_/     
+        
+            ____
+           /  _/
+           / /  
+         _/ /   
+        /___/   
+        
+           ____ 
+          / __ \
+         / / / /
+        / /_/ / 
+        \____/  
+        
+            _   __
+           / | / /
+          /  |/ / 
+         / /|  /  
+        /_/ |_/   
+      </pre>
+    </div>
+    <div id="banner-right" class="banner" aria-hidden="true">
+      <pre>
+        __  __
+        \ \/ /
+         \  / 
+         / /  
+        /_/   
+        
+           ____ 
+          / __ \
+         / / / /
+        / /_/ / 
+        \____/  
+        
+           __  __
+          / / / /
+         / / / / 
+        / /_/ /  
+        \____/   
+        
+        
+        
+            ___ 
+           /   |
+          / /| |
+         / ___ |
+        /_/  |_|
+        
+            ____ 
+           / __ \
+          / /_/ /
+         / _, _/ 
+        /_/ |_|  
+        
+            ______
+           / ____/
+          / __/   
+         / /___   
+        /_____/   
+        
+        
+        
+            _   __
+           / | / /
+          /  |/ / 
+         / /|  /  
+        /_/ |_/   
+        
+           ____ 
+          / __ \
+         / / / /
+        / /_/ / 
+        \____/  
+        
+          ______
+         /_  __/
+          / /   
+         / /    
+        /_/     
+        
+        
+        
+            ___ 
+           /   |
+          / /| |
+         / ___ |
+        /_/  |_|
+        
+            __ 
+           / / 
+          / /  
+         / /___
+        /_____/
+        
+           ____ 
+          / __ \
+         / / / /
+        / /_/ / 
+        \____/  
+        
+            _   __
+           / | / /
+          /  |/ / 
+         / /|  /  
+        /_/ |_/   
+        
+            ______
+           / ____/
+          / __/   
+         / /___   
+        /_____/   
+      </pre>
+    </div>
     <main class="window">
 
       <div class="titlebar">
         <div class="titlebar-left">
-<p class="titlebar-title">jsbkgg.space</p>
+          <p class="titlebar-title" data-text="jsbkgg.space">jsbkgg.space</p>
         </div>
         <div class="titlebar-buttons">
           <div class="btn" title="Minimize">_</div>
@@ -23,29 +179,35 @@
       </div>
 
       <div class="body">
-        <div id="boot-log" aria-live="polite"></div>
-
         <div class="group" data-label="About">
           <p>Hi, I'm Jakub — a Polish student into web dev, anime, games, and Linux ricing.</p>
         </div>
+        <img class="divider" src="assets/divider.svg" alt="" aria-hidden="true" />
 
         <div class="group" data-label="Socials">
           <div class="row"><span class="label">github</span><a href="https://github.com/taktojakuba" target="_blank">github.com/taktojakuba</a></div>
           <div class="row"><span class="label">discord</span><a href="https://discordapp.com/users/768727776323829790" target="_blank">@taktojakuba</a></div>
           <div class="row"><span class="label">telegram</span><a href="https://t.me/taktojakuba" target="_blank">t.me/taktojakuba</a></div>
         </div>
+        <img class="divider" src="assets/divider.svg" alt="" aria-hidden="true" />
 
         <div class="group" data-label="Status">
           <div id="status" aria-live="polite">Connecting...</div>
         </div>
+        <img class="divider" src="assets/divider.svg" alt="" aria-hidden="true" />
 
         <div class="group" data-label="Projects">
           <div class="row"><span class="label">ferret</span><a href="https://ferretlinux.org" target="_blank">ferretlinux.org</a></div>
           <div class="row"><span class="label">kudarch</span><a href="https://github.com/taktojakuba/kudarch" target="_blank">github.com/taktojakuba/kudarch</a></div>
+          <div class="row"><span class="label">nooctalia plugins</span><a href="https://github.com/taktojakuba/plugins" target="_blank">github.com/taktojakuba/plugins</a></div>
         </div>
+        <img class="divider" src="assets/divider.svg" alt="" aria-hidden="true" />
+
         <div class="group" data-label="Guides">
-            <div class="row"><span class="label">tmux</span><a href="./articles/tmux.html">minimalistic configuration</a></div>
+          <div class="row"><span class="label">tmux</span><a href="./articles/tmux.html">minimalistic configuration</a></div>
         </div>
+        <img class="divider" src="assets/divider.svg" alt="" aria-hidden="true" />
+
         <div class="group" data-label="Rice">
           <div class="grid">
             <div class="card">
@@ -68,8 +230,18 @@
               <div class="card-meta">WM: mangowm | Term: foot | Bar: waybar</div>
               <div class="card-img"><img src="assets/rice4.png" alt="mangowm rice" /></div>
             </div>
+             <div class="card">
+              <div class="card-titlebar">rice-05-mangowm</div>
+              <div class="card-meta">WM: mangowm | Term: foot | Bar: noctalia-v5</div>
+              <div class="card-img"><img src="assets/rice5.png" alt="mangowm rice" /></div>
+            </div>           <div class="card">
+              <div class="card-titlebar">rice-06-mangowm</div>
+              <div class="card-meta">WM: mangowm | Term: wezterm | Bar: noctalia-v5</div>
+              <div class="card-img"><img src="assets/rice6.png" alt="mangowm rice" /></div>
+            </div>
           </div>
         </div>
+        <img class="divider" src="assets/divider.svg" alt="" aria-hidden="true" />
 
         <div class="group" data-label="Anime">
           <div class="row"><span class="label">lain</span><a href="https://anilist.co/anime/339/serial-experiments-lain/" target="_blank">Serial Experiments Lain</a></div>
@@ -79,16 +251,12 @@
           <div class="row"><span class="label">code_geass</span><a href="https://anilist.co/anime/1575/Code-Geass-Hangyaku-no-Lelouch/" target="_blank">Code Geass</a></div>
           <div class="row"><span class="label">edgerunners</span><a href="https://anilist.co/anime/120377/Cyberpunk-Edgerunners/" target="_blank">Cyberpunk Edgerunners</a></div>
           <div class="row"><span class="label">frieren</span><a href="https://anilist.co/anime/154587/Sousou-no-Frieren/" target="_blank">Sousou no Frieren</a></div>
-          <div class="row"><span class="label">dr_stone</span><a href="https://anilist.co/anime/105333/Dr-STONE/" target="_blank">Dr. Stone</a></div>
           <div class="row"><span class="label">mushoku_tensei</span><a href="https://anilist.co/anime/108465/Mushoku-Tensei-Isekai-Ittara-Honki-Dasu/" target="_blank">Mushoku Tensei</a></div>
           <div class="row"><span class="label">darling_franxx</span><a href="https://anilist.co/anime/99423/Darling-in-the-Franxx/" target="_blank">Darling in the Franxx</a></div>
           <div class="row"><span class="label">sao</span><a href="https://anilist.co/anime/11757/Sword-Art-Online/" target="_blank">Sword Art Online</a></div>
-          <div class="row"><span class="label">rezero</span><a href="https://anilist.co/anime/21355/ReZero-kara-Hajimeru-Isekai-Seikatsu/" target="_blank">Re:Zero</a></div>
-          <div class="row"><span class="label">chainsaw_man</span><a href="https://anilist.co/anime/127230/Chainsaw-Man/" target="_blank">Chainsaw Man</a></div>
           <div class="row"><span class="label">bleach</span><a href="https://anilist.co/anime/269/BLEACH/" target="_blank">Bleach</a></div>
-          <div class="row"><span class="label">spy_family</span><a href="https://anilist.co/anime/140960/SPYFAMILY/" target="_blank">Spy x Family</a></div>
-
-
+        </div>
+      </div>
     </main>
     <script src="script.js"></script>
   </body>
