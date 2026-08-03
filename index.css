@@ -24,6 +24,25 @@ body {
   color: white;
 }
 
+body::before {
+  content: "";
+  position: fixed;
+  left: -10%;
+  right: -10%;
+  bottom: 0;
+  height: 60vh;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.3) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.3) 1px, transparent 1px);
+  background-size: 64px 64px;
+  transform: perspective(400px) rotateX(60deg);
+  transform-origin: bottom center;
+  -webkit-mask-image: linear-gradient(to top, black 45%, transparent);
+  mask-image: linear-gradient(to top, black 45%, transparent);
+  pointer-events: none;
+  z-index: -1;
+}
+
 .main-box {
   border: 2px dashed white;
   padding: 1rem;
@@ -45,6 +64,23 @@ a {
 
 a:visited {
   color: #aaa;
+}
+
+code {
+  border: 1px dotted white;
+  padding: 0 0.25rem;
+}
+
+kbd {
+  border: 1px dotted white;
+  padding: 0 0.25rem;
+}
+
+pre {
+  border: 2px dashed white;
+  padding: 0.75rem;
+  overflow-x: auto;
+  white-space: pre;
 }
 
 .side-text {
