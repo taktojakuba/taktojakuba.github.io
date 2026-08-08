@@ -11,6 +11,29 @@
     "IBM VGA", "MS Sans Serif", "Microsoft Sans Serif", Arial, sans-serif;
   font-family: "IBM VGA", "Lucida Console", "Courier New", monospace;
   zoom: 140%;
+
+  /* Golden ratio (1.618) type scale based on 1rem */
+  --fs-1: calc(1rem * 1.618);
+  --fs-2: calc(1rem * 2.618);
+  --fs-3: calc(1rem * 4.236);
+}
+
+h1 {
+  font-size: var(--fs-3);
+}
+
+h2 {
+  font-size: var(--fs-2);
+}
+
+h3 {
+  font-size: var(--fs-1);
+}
+
+h4,
+h5,
+h6 {
+  font-size: 1rem;
 }
 
 * {
